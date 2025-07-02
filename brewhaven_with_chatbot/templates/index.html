@@ -10,6 +10,44 @@
 </head>
 <body>
 
+   <div id="loader-wrapper">
+  <style>
+    #loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      /* Changed transition duration to 2.5 seconds */
+      transition: opacity 2.5s, visibility 2.5s;
+    }
+    #loader-wrapper img {
+      /* Made the sphere much larger */
+      width: 1500px; 
+      height: 1500px;
+    }
+  </style>
+  
+  <img src="https://i.pinimg.com/originals/79/a3/84/79a384c3c449ad01b0e57e790807b2c0.gif" alt="Loading...">
+
+  <script>
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('loader-wrapper');
+      loader.style.opacity = '0';
+      loader.style.visibility = 'hidden';
+      setTimeout(() => {
+        loader.remove();
+        /* Changed timeout to match the 2.5s transition */
+      }, 2500); 
+    });
+  </script>
+</div>
+
     <section id="Home">
         <nav>
             <div class="logo">
@@ -423,81 +461,7 @@
 
 
 
-<!-- 
-    Gallary 
 
-   <div class="gallary" id="Gallary">
-        <h1>Our<span>Gallary</span></h1>
-
-        <div class="gallary_image_box">
-            <div class="gallary_image">
-                <img src="static/image/gallary_1.jpg">
-
-                <h3>Food</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
-                </p>
-                <a href="#" class="gallary_btn">Order Now</a>
-            </div>
-
-            <div class="gallary_image">
-                <img src="static/image/gallary_2.jpg">
-
-                <h3>Food</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
-                </p>
-                <a href="#" class="gallary_btn">Order Now</a>
-            </div>
-
-            <div class="gallary_image">
-                <img src="static/image/gallary_3.jpg">
-
-                <h3>Food</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
-                </p>
-                <a href="#" class="gallary_btn">Order Now</a>
-            </div>
-
-            <div class="gallary_image">
-                <img src="static/image/gallary_4.jpg">
-
-                <h3>Food</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
-                </p>
-                <a href="#" class="gallary_btn">Order Now</a>
-            </div>
-
-            <div class="gallary_image">
-                <img src="static/image/gallary_5.jpg">
-
-                <h3>Food</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
-                </p>
-                <a href="#" class="gallary_btn">Order Now</a>
-            </div>
-
-            <div class="gallary_image">
-                <img src="static/image/gallary_6.jpg">
-
-                <h3>Food</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
-                </p>
-                <a href="#" class="gallary_btn">Order Now</a>
-            </div>
-
-        </div>
-
-    </div> -->
-
-
-
-
-    <!--Review-->
 
     <div class="review" id="Review">
         <h1>Customer<span>Review</span></h1>
